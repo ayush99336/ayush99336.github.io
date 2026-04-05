@@ -13,21 +13,18 @@ permalink: /about/
 <section class="panel stagger stagger-2">
 	<h2>Now</h2>
 	<ul>
-		<li>
-        <Building>: Building and learning Redis with its rust implementation (thanks to codecrafters).</li>
-				<li>
-        Learning: Preparing for an exam by learning Aptitude and core engineering.</li>
-				<li>
-        Improving: Improving book reading habits and focus.</li>
+		<li>Building: Building and learning Redis with its Rust implementation (thanks to CodeCrafters).</li>
+		<li>Learning: Preparing for an exam by learning aptitude and core engineering.</li>
+		<li>Improving: Improving book reading habits and focus.</li>
 	</ul>
 </section>
 
 <section class="panel stagger stagger-3">
 	<h2>Stack</h2>
 	<ul>
-		<li>Languages: [JavaScript, TypeScript, Python, etc.]</li>
-		<li>Frameworks: [React, Node.js, Jekyll, etc.]</li>
-		<li>Tools: [GitHub Actions, Docker, PostgreSQL, etc.]</li>
+		<li>Languages: TypeScript, Rust, JavaScript, Python, SQL</li>
+		<li>Frameworks: React, Express, Tokio, Node.js, Jekyll</li>
+		<li>Tools: Git, GitHub, GitHub Actions, Docker, Linux, VS Code, PostgreSQL, Redis</li>
 	</ul>
 </section>
 
