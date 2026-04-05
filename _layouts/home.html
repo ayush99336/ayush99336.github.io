@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<section class="welcome panel stagger stagger-1">
+  <h1>Welcome</h1>
+  <p>{{ site.description }}</p>
+</section>
+
+<section class="panel quick-links stagger stagger-2">
+  <h2>Explore</h2>
+  <ul>
+    {% for item in site.nav_links %}
+      <li>
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="panel social-links stagger stagger-3">
+  <h2>Connect</h2>
+  <ul>
+    {% for item in site.social_links %}
+      <li>
+        <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="panel posts-list stagger stagger-4">
+  <h2>Latest posts</h2>
+  {% if site.posts.size > 0 %}
+    <ul>
+      {% for post in site.posts limit: 6 %}
+        <li>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <small>{{ post.date | date: "%b %-d, %Y" }}</small>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No posts yet. Add your first post in <code>_posts</code>.</p>
+  {% endif %}
+</section>

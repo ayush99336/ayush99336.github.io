@@ -1,0 +1,239 @@
+:root {
+  --bg: #fffdf8;
+  --bg-shade: #f4efe3;
+  --text: #141413;
+  --muted: #4f4b43;
+  --line: #221f19;
+  --surface: #ffffff;
+  --accent: #a54f2f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: var(--surface);
+  background: var(--line);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1000px 360px at 100% -5%, #efe4c9 0%, transparent 70%),
+    linear-gradient(180deg, var(--bg-shade) 0%, var(--bg) 170px);
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+}
+
+.wrapper {
+  width: min(880px, 92%);
+  margin: 0 auto;
+}
+
+.site-header {
+  border-bottom: 2px solid var(--line);
+  padding: 1.4rem 0;
+}
+
+.header-grid {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-title {
+  display: inline-block;
+  text-decoration: none;
+  font-size: clamp(1.45rem, 4vw, 1.85rem);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.site-tagline {
+  margin: 0.2rem 0 0;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  justify-content: flex-end;
+}
+
+.site-nav a {
+  text-decoration: none;
+  text-transform: lowercase;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 0.83rem;
+  border-bottom: 1px solid transparent;
+}
+
+.site-nav a:hover {
+  border-color: var(--line);
+}
+
+.page-content {
+  margin: 2rem auto;
+  flex: 1 0 auto;
+}
+
+.panel {
+  background: var(--surface);
+  border: 2px solid var(--line);
+  padding: 1.1rem 1.2rem;
+  margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 5.2vw, 2.9rem);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.65rem;
+}
+
+p {
+  margin: 0.5rem 0;
+  max-width: 64ch;
+}
+
+ul {
+  margin: 0.2rem 0 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+li {
+  padding: 0.32rem 0;
+}
+
+.quick-links a,
+.social-links a,
+.posts-list a {
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+.quick-links a:hover,
+.social-links a:hover,
+.posts-list a:hover {
+  color: var(--accent);
+}
+
+.posts-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.8rem;
+  border-bottom: 1px dashed #c3b8a8;
+}
+
+.posts-list small {
+  flex: 0 0 auto;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.post {
+  background: var(--surface);
+  border: 2px solid var(--line);
+  padding: 1.25rem;
+}
+
+.post header {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.post-meta {
+  color: var(--muted);
+  margin: 0;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 0.8rem;
+}
+
+.site-footer {
+  border-top: 2px solid var(--line);
+  margin-top: auto;
+  padding: 1rem 0 2rem;
+  color: var(--muted);
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 0.78rem;
+}
+
+.stagger {
+  animation: riseIn 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.stagger-1 { animation-delay: 0.04s; }
+.stagger-2 { animation-delay: 0.12s; }
+.stagger-3 { animation-delay: 0.2s; }
+.stagger-4 { animation-delay: 0.28s; }
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stagger {
+    animation: none;
+    transform: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .header-grid {
+    display: block;
+  }
+
+  .site-nav {
+    margin-top: 0.8rem;
+    justify-content: flex-start;
+    gap: 0.65rem;
+  }
+
+  .posts-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.1rem;
+  }
+}

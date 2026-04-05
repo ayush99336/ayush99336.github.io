@@ -1,0 +1,37 @@
+title: Ayush
+email: hello@example.com
+description: >-
+  A developer's personal archive.
+tagline: Building, breaking, and documenting software.
+baseurl: ""
+url: ""
+lang: en
+author: Ayush
+
+nav_links:
+  - title: About
+    url: /about/
+  - title: Projects
+    url: /projects/
+  - title: Blog
+    url: /blog/
+
+social_links:
+  - title: GitHub
+    url: https://github.com/ayush99336
+  - title: X
+    url: https://x.com/
+  - title: Email
+    url: mailto:hello@example.com
+
+markdown: kramdown
+permalink: /:categories/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
