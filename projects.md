@@ -6,8 +6,7 @@ permalink: /projects/
 
 <section class="panel stagger stagger-1">
   <h1>Projects</h1>
-  <p>A selection of things I am building and maintaining.</p>
-  <p>Each entry includes what it does, why it exists, and what happened during development.</p>
+  <p>A few projects across product engineering and systems work.</p>
 </section>
 
 <section class="panel quick-links stagger stagger-2">
@@ -19,37 +18,34 @@ permalink: /projects/
 </section>
 
 <section class="panel stagger stagger-3">
-  <h2>Project Template</h2>
-  <ul>
-    <li><strong>Name:</strong> [Project Name]</li>
-    <li><strong>Problem:</strong> [What issue does it solve?]</li>
-    <li><strong>Solution:</strong> [How you solved it]</li>
-    <li><strong>Stack:</strong> [Tech used]</li>
-    <li><strong>Status:</strong> [Planning / In progress / Live / Archived]</li>
-    <li><strong>Links:</strong> [Live URL] | [GitHub URL] | [Case study URL]</li>
-  </ul>
+  <h2>Ectoplasm Protocol</h2>
+  <p>
+    Casper-based DEX implementation with token swaps, liquidity provisioning, and liquid staking flows, including wallet
+    integration and real-time on-chain balance handling.
+  </p>
+  <p><strong>Stack:</strong> React, TypeScript, Vite, Rust, Odra, Casper</p>
+  <p><a href="https://github.com/ayush99336" target="_blank" rel="noopener noreferrer">View code</a></p>
 </section>
 
 <section class="panel stagger stagger-4">
-  <h2>Example Entry 1</h2>
-  <ul>
-    <li><strong>Name:</strong> Build Log Tracker</li>
-    <li><strong>Problem:</strong> Progress was scattered across commits and notes.</li>
-    <li><strong>Solution:</strong> A structured logging workflow tied to milestones and blockers.</li>
-    <li><strong>Stack:</strong> Jekyll, Markdown, GitHub Actions</li>
-    <li><strong>Status:</strong> In progress</li>
-    <li><strong>Links:</strong> <a href="#">Live</a> | <a href="#">GitHub</a></li>
-  </ul>
+  <h2>Recall</h2>
+  <p>
+    Browser extension project for contextual memory prompts, built with a fullstack setup including secure authentication,
+    media optimization, and personalized feed delivery.
+  </p>
+  <p><strong>Stack:</strong> Chrome Extension API, Cloudinary, Next.js, NextAuth, PostgreSQL, TypeScript</p>
+  <p><a href="https://github.com/ayush99336" target="_blank" rel="noopener noreferrer">View code</a></p>
 </section>
 
 <section class="panel stagger stagger-4">
-  <h2>Example Entry 2</h2>
-  <ul>
-    <li><strong>Name:</strong> Personal Portfolio API</li>
-    <li><strong>Problem:</strong> Needed a simple backend to power dynamic project pages.</li>
-    <li><strong>Solution:</strong> Built a lightweight API for project metadata and changelogs.</li>
-    <li><strong>Stack:</strong> Node.js, Express, PostgreSQL</li>
-    <li><strong>Status:</strong> Live</li>
-    <li><strong>Links:</strong> <a href="#">Docs</a> | <a href="#">Repository</a></li>
-  </ul>
+  <h2>Multiplayer Game Infrastructure Notes</h2>
+  <p>
+    Realtime multiplayer backend work covering session handling, settlement paths, and reliability hardening for reconnects,
+    retries, and state-transition edge cases.
+  </p>
+  <p>
+    Also contributed to web-based card games like poker, including smart contract work across Ethereum and Solana,
+    with privacy-focused flows on Solana using Inco.
+  </p>
+  <p><strong>Stack:</strong> Rust, Redis, WebSockets, backend services</p>
 </section>

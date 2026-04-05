@@ -6,8 +6,8 @@ permalink: /about/
 
 <section class="panel stagger stagger-1">
 	<h1>About</h1>
-	<p>I am Ayush, a civil engineer by degree and software hobbyist.</p>
-	<p>This site is my personal archive: what I build, what breaks, and what I learn while shipping.</p>
+	<p>I am Ayush Kaushik, a software engineer focused on backend, realtime, and product-facing systems.</p>
+	<p>This site is a personal archive of notes, experiments, and project progress.</p>
 </section>
 
 <section class="panel stagger stagger-2">
@@ -22,14 +22,29 @@ permalink: /about/
 <section class="panel stagger stagger-3">
 	<h2>Stack</h2>
 	<ul>
-		<li>Languages: TypeScript, Rust, JavaScript, Python, SQL</li>
-		<li>Frameworks: React, Express, Tokio, Node.js, Jekyll</li>
-		<li>Tools: Git, GitHub, GitHub Actions, Docker, Linux, VS Code, PostgreSQL, Redis</li>
+		<li>Languages: TypeScript, JavaScript, Rust, Python, SQL, Solidity</li>
+		<li>Frameworks: React, Next.js, Express, FastAPI, Tokio, Node.js</li>
+		<li>Tools: Git, GitHub, Docker, AWS (EC2/S3), PostgreSQL, MongoDB, Prisma, Redis</li>
 	</ul>
 </section>
 
 <section class="panel stagger stagger-4">
+	<h2>Experience</h2>
+	<ul>
+		<li><strong>Khel.fun</strong> (Sept 2025 - Present): Fullstack Blockchain Developer (remote), working on game infrastructure, testing, and reliability.</li>
+		<li><strong>Anabi.Ai</strong> (Mar 2024 - Aug 2024): Software Engineering Intern (remote), worked on automation workflows and data systems.</li>
+	</ul>
+</section>
+
+<section class="panel stagger stagger-4">
+	<h2>Education</h2>
+	<p>Indian Institute of Technology (ISM), Dhanbad - B.Tech in Civil Engineering (2025).</p>
+</section>
+
+<section class="panel stagger stagger-4">
 	<h2>Contact</h2>
-	<p>Best way to reach me: <a href="mailto:hello@example.com">hello@example.com</a></p>
-	<p>Open to: [freelance work / full-time roles / collaborations / speaking].</p>
+	<p>Best way to reach me: <a href="mailto:ayushkaushikhere@gmail.com">ayushkaushikhere@gmail.com</a></p>
+	<p>GitHub: <a href="https://github.com/ayush99336" target="_blank" rel="noopener noreferrer">github.com/ayush99336</a></p>
+	<p>LinkedIn: <a href="https://linkedin.com/in/ayushkaushik-ism" target="_blank" rel="noopener noreferrer">linkedin.com/in/ayushkaushik-ism</a></p>
+	<p>You can also find project updates on the blog and projects pages.</p>
 </section>

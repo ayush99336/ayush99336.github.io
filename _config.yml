@@ -1,12 +1,12 @@
-title: Ayush
-email: hello@example.com
+title: Ayush Kaushik
+email: ayushkaushikhere@gmail.com
 description: >-
-  A developer's personal archive.
+  A personal archive of what I build, what breaks, and what I learn while shipping.
 tagline: Building, breaking, and documenting software.
 baseurl: ""
 url: ""
 lang: en
-author: Ayush
+author: Ayush Kaushik
 
 nav_links:
   - title: About
@@ -19,10 +19,10 @@ nav_links:
 social_links:
   - title: GitHub
     url: https://github.com/ayush99336
-  - title: X
-    url: https://x.com/
+  - title: LinkedIn
+    url: https://linkedin.com/in/ayushkaushik-ism
   - title: Email
-    url: mailto:hello@example.com
+    url: mailto:ayushkaushikhere@gmail.com
 
 markdown: kramdown
 permalink: /:categories/:year/:month/:day/:title/
