@@ -1,4 +1,7 @@
-<!doctype html>
+const fs = require('fs');
+let html = fs.readFileSync('_layouts/default.html', 'utf8');
+
+const newHtml = `<!doctype html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
   <head>
     {% include head.html %}
@@ -18,6 +21,13 @@
           </div>
           
           <div class="header-actions">
+            <nav class="site-nav" aria-label="Main navigation">
+              <a href="{{ '/' | relative_url }}">Welcome</a>
+              {% for item in site.nav_links %}
+                <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+              {% endfor %}
+            </nav>
+
             <div class="social-icon-row" aria-label="Social links">
               {% for item in site.social_links %}
                 <a class="social-icon-link" href="{{ item.url }}" {% unless item.url contains 'mailto:' %}target="_blank" rel="noopener noreferrer"{% endunless %} aria-label="{{ item.title }}">
@@ -42,6 +52,10 @@
             </div>
           </div>
         </header>
+
+        <footer class="site-footer">
+          <p>Built with Jekyll. Hosted on GitHub Pages.</p>
+        </footer>
       </aside>
 
       <main class="page-content">
@@ -49,4 +63,7 @@
       </main>
     </div>
   </body>
-</html>
+</html>`;
+
+fs.writeFileSync('_layouts/default.html', newHtml);
+console.log('HTML Replaced');
