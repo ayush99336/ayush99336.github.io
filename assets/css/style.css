@@ -51,6 +51,24 @@ a {
   gap: 1rem;
 }
 
+.brand-block {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-content {
+  min-width: 0;
+}
+
+.profile-avatar {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 1px solid #bdb3a0;
+}
+
 .site-title {
   display: inline-block;
   text-decoration: none;
@@ -61,7 +79,7 @@ a {
 }
 
 .site-tagline {
-  margin: 0.2rem 0 0;
+  margin: 0.15rem 0 0;
   font-family: "IBM Plex Mono", "Courier New", monospace;
   font-size: 0.82rem;
   color: var(--muted);
@@ -243,6 +261,38 @@ li {
   font-size: 0.78rem;
 }
 
+.social-icon-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.3rem;
+}
+
+.social-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 1px solid #bdb3a0;
+  border-radius: 999px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+
+.social-icon-link svg {
+  width: 0.82rem;
+  height: 0.82rem;
+  fill: currentColor;
+}
+
+.social-icon-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
 .stagger {
   animation: riseIn 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
   will-change: transform, opacity;
@@ -276,6 +326,10 @@ li {
 @media (max-width: 700px) {
   .header-grid {
     display: block;
+  }
+
+  .brand-block {
+    align-items: flex-start;
   }
 
   .site-nav {
