@@ -162,6 +162,18 @@ li {
   font-size: 0.75rem;
 }
 
+.post-entry-main {
+  min-width: 0;
+}
+
+.post-cats {
+  margin-top: 0.1rem;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  color: var(--muted);
+  font-size: 0.72rem;
+  text-transform: lowercase;
+}
+
 .post {
   background: var(--surface);
   border: 2px solid var(--line);
@@ -180,6 +192,47 @@ li {
   font-family: "IBM Plex Mono", "Courier New", monospace;
   font-size: 0.8rem;
 }
+
+.post code,
+.post pre {
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+}
+
+.post pre {
+  background: #1e1f24;
+  color: #f3f4f6;
+  border: 1px solid #2d2f36;
+  border-radius: 8px;
+  padding: 0.8rem 0.9rem;
+  overflow-x: auto;
+}
+
+.post :not(pre) > code {
+  background: #f4efe3;
+  border: 1px solid #dfd6c4;
+  border-radius: 6px;
+  padding: 0.1rem 0.35rem;
+}
+
+.highlight .k,
+.highlight .kd,
+.highlight .kr,
+.highlight .kt { color: #ff7a90; }
+.highlight .nf,
+.highlight .nc,
+.highlight .fm { color: #7dcfff; }
+.highlight .s,
+.highlight .s1,
+.highlight .s2 { color: #9ece6a; }
+.highlight .mi,
+.highlight .m { color: #ff9e64; }
+.highlight .c,
+.highlight .c1,
+.highlight .cm { color: #7a8194; }
+.highlight .nb,
+.highlight .bp,
+.highlight .o,
+.highlight .p { color: #c0caf5; }
 
 .site-footer {
   border-top: 2px solid var(--line);

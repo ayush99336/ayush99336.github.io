@@ -1,12 +1,13 @@
 title: Ayush Kaushik
 email: ayushkaushikhere@gmail.com
 description: >-
-  A personal archive of what I build, what breaks, and what I learn while shipping.
+  A personal archive of what I build, what breaks, and what I learn.
 tagline: Building, breaking, and documenting software.
 baseurl: ""
-url: ""
+url: "https://ayush99336.github.io"
 lang: en
 author: Ayush Kaushik
+timezone: Asia/Kolkata
 
 nav_links:
   - title: About
@@ -15,6 +16,8 @@ nav_links:
     url: /projects/
   - title: Blog
     url: /blog/
+  - title: Journal
+    url: /journal/
 
 social_links:
   - title: GitHub
@@ -25,6 +28,10 @@ social_links:
     url: mailto:ayushkaushikhere@gmail.com
 
 markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 permalink: /:categories/:year/:month/:day/:title/
 
 plugins:

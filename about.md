@@ -6,8 +6,8 @@ permalink: /about/
 
 <section class="panel stagger stagger-1">
 	<h1>About</h1>
-	<p>I am Ayush Kaushik, a software engineer focused on backend, realtime, and product-facing systems.</p>
-	<p>This site is a personal archive of notes, experiments, and project progress.</p>
+	<p>Ayush Kaushik. Software engineer working across backend, realtime, and product systems.</p>
+	<p>This site is an archive of project notes, build logs, and journal entries.</p>
 </section>
 
 <section class="panel stagger stagger-2">
@@ -20,6 +20,13 @@ permalink: /about/
 </section>
 
 <section class="panel stagger stagger-3">
+	<h2>Contact</h2>
+	<p><a href="mailto:ayushkaushikhere@gmail.com">ayushkaushikhere@gmail.com</a></p>
+	<p><a href="https://github.com/ayush99336" target="_blank" rel="noopener noreferrer">github.com/ayush99336</a></p>
+	<p><a href="https://linkedin.com/in/ayushkaushik-ism" target="_blank" rel="noopener noreferrer">linkedin.com/in/ayushkaushik-ism</a></p>
+</section>
+
+<section class="panel stagger stagger-4">
 	<h2>Stack</h2>
 	<ul>
 		<li>Languages: TypeScript, JavaScript, Rust, Python, SQL, Solidity</li>
@@ -42,9 +49,6 @@ permalink: /about/
 </section>
 
 <section class="panel stagger stagger-4">
-	<h2>Contact</h2>
-	<p>Best way to reach me: <a href="mailto:ayushkaushikhere@gmail.com">ayushkaushikhere@gmail.com</a></p>
-	<p>GitHub: <a href="https://github.com/ayush99336" target="_blank" rel="noopener noreferrer">github.com/ayush99336</a></p>
-	<p>LinkedIn: <a href="https://linkedin.com/in/ayushkaushik-ism" target="_blank" rel="noopener noreferrer">linkedin.com/in/ayushkaushik-ism</a></p>
+	<h2>Notes</h2>
 	<p>You can also find project updates on the blog and projects pages.</p>
 </section>

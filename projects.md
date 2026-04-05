@@ -23,6 +23,8 @@ permalink: /projects/
     Casper-based DEX implementation with token swaps, liquidity provisioning, and liquid staking flows, including wallet
     integration and real-time on-chain balance handling.
   </p>
+  <p><strong>Status:</strong> Active development</p>
+  <p><strong>Last updated:</strong> April 2026</p>
   <p><strong>Stack:</strong> React, TypeScript, Vite, Rust, Odra, Casper</p>
   <p><a href="https://github.com/ayush99336" target="_blank" rel="noopener noreferrer">View code</a></p>
 </section>
@@ -33,6 +35,8 @@ permalink: /projects/
     Browser extension project for contextual memory prompts, built with a fullstack setup including secure authentication,
     media optimization, and personalized feed delivery.
   </p>
+  <p><strong>Status:</strong> Prototype</p>
+  <p><strong>Last updated:</strong> April 2026</p>
   <p><strong>Stack:</strong> Chrome Extension API, Cloudinary, Next.js, NextAuth, PostgreSQL, TypeScript</p>
   <p><a href="https://github.com/ayush99336" target="_blank" rel="noopener noreferrer">View code</a></p>
 </section>
@@ -47,5 +51,7 @@ permalink: /projects/
     Also contributed to web-based card games like poker, including smart contract work across Ethereum and Solana,
     with privacy-focused flows on Solana using Inco.
   </p>
+  <p><strong>Status:</strong> Ongoing notes</p>
+  <p><strong>Last updated:</strong> April 2026</p>
   <p><strong>Stack:</strong> Rust, Redis, WebSockets, backend services</p>
 </section>
