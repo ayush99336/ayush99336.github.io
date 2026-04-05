@@ -1,11 +1,11 @@
 :root {
-  --bg: #fffdf8;
-  --bg-shade: #f4efe3;
-  --text: #141413;
-  --muted: #4f4b43;
-  --line: #221f19;
-  --surface: #ffffff;
-  --accent: #a54f2f;
+  --bg: #efefed;
+  --bg-shade: #e5e5e1;
+  --text: #222226;
+  --muted: #5f5f63;
+  --line: #3a3a3f;
+  --surface: #f5f5f5;
+  --accent: #3d77bf;
 }
 
 * {
@@ -24,9 +24,7 @@ body {
   flex-direction: column;
   font-family: "DM Sans", "Segoe UI", sans-serif;
   color: var(--text);
-  background:
-    radial-gradient(1000px 360px at 100% -5%, #efe4c9 0%, transparent 70%),
-    linear-gradient(180deg, var(--bg-shade) 0%, var(--bg) 170px);
+  background: linear-gradient(180deg, var(--bg-shade) 0%, var(--bg) 220px);
   line-height: 1.65;
 }
 
@@ -39,22 +37,17 @@ a {
 .site-container {
   display: flex;
   flex-direction: column;
-  width: min(96vw, 1680px);
-  max-width: 1680px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   min-height: 100vh;
 }
 
 @media (min-width: 800px) {
   .site-container {
-    width: 100%;
-    max-width: none;
-    margin: 0;
     flex-direction: row-reverse;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 2.25rem 0.6rem;
-    gap: 1.1rem;
+    align-items: stretch;
+    padding: 0;
+    gap: 0;
   }
 }
 
@@ -68,16 +61,19 @@ a {
 
 @media (min-width: 800px) {
   .site-sidebar {
-    width: 230px;
+    width: 340px;
     flex-shrink: 0;
     position: sticky;
-    top: 50vh;
-    transform: translateY(-50%);
-    padding: 0;
+    top: 0;
+    height: 100vh;
+    overflow: auto;
+    padding: 2.5rem 2rem;
     border-bottom: none;
+    border-left: 2px solid var(--line);
     background: transparent;
     align-items: center;
     text-align: center;
+    justify-content: center;
   }
 }
 
@@ -118,17 +114,17 @@ a {
 .site-title {
   display: inline-block;
   text-decoration: none;
-  font-size: 1.6rem;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  font-weight: 800;
-  line-height: 1.1;
+  font-size: 2.35rem;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 700;
+  line-height: 0.95;
 }
 
 .site-tagline {
   margin: 0;
   font-family: "IBM Plex Mono", "Courier New", monospace;
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   color: var(--muted);
   line-height: 1.4;
 }
@@ -137,7 +133,9 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 0.9rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--line);
   width: 100%;
 }
 
@@ -182,9 +180,9 @@ a {
 
 @media (min-width: 800px) {
   .page-content {
-    padding: 0;
-    flex: 1 1 auto;
-    width: auto;
+    flex: 1;
+    min-width: 0;
+    padding: 2.5rem 3rem;
     max-width: none;
   }
 }
