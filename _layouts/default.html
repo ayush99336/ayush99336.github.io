@@ -54,6 +54,11 @@
             </svg>
             Home
           </a>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle colour theme">
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="icon-sun"  viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5a7 7 0 1 0 0 14A7 7 0 0 0 12 5zm0-3a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1zm0 17a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zm9-8a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1zM4 12a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1zm13.66-6.66a1 1 0 0 1 0 1.41l-.71.71a1 1 0 0 1-1.41-1.41l.71-.71a1 1 0 0 1 1.41 0zM7.05 16.95a1 1 0 0 1 0 1.41l-.71.71a1 1 0 0 1-1.41-1.41l.71-.71a1 1 0 0 1 1.41 0zm10.61 1.41a1 1 0 0 1-1.41 0l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41zM7.05 7.05a1 1 0 0 1-1.41 0l-.71-.71A1 1 0 0 1 6.34 4.93l.71.71a1 1 0 0 1 0 1.41z"/></svg>
+            <span id="theme-label">Dark</span>
+          </button>
         </div>
       </header>
     </aside>
@@ -68,21 +73,31 @@
       var ctx = canvas.getContext('2d');
       var CW = 14, CH = 18;
       var cols, numRows, drops;
-      var BG = '#efefed'; // matches --bg
+
+      function getRainColors() {
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        return dark ? {
+          bg:      '#0d0d0f',
+          overlay: 'rgba(13,13,15,0.06)',
+          head:    'rgba(210,230,255,0.68)',
+          sub:     'rgba(210,230,255,0.30)'
+        } : {
+          bg:      '#efefed',
+          overlay: 'rgba(239,239,237,0.055)',
+          head:    'rgba(34,34,38,0.45)',
+          sub:     'rgba(34,34,38,0.22)'
+        };
+      }
 
       function init() {
         canvas.width  = window.innerWidth;
         canvas.height = window.innerHeight;
         cols    = Math.ceil(canvas.width  / CW);
         numRows = Math.ceil(canvas.height / CH);
-
-        // Solid bg fill so the fade-overlay technique works from frame 1
-        ctx.fillStyle = BG;
+        ctx.fillStyle = getRainColors().bg;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-
         drops = new Array(cols);
         for (var i = 0; i < cols; i++) {
-          // ~65 % of columns start active, rest start above screen
           drops[i] = Math.random() < 0.65
             ? -Math.floor(Math.random() * numRows)
             : -(numRows + Math.floor(Math.random() * numRows));
@@ -90,38 +105,46 @@
       }
 
       function draw() {
-        // Paint a semi-transparent light overlay — fades old chars back to bg
-        ctx.fillStyle = 'rgba(239,239,237,0.055)';
+        var c = getRainColors();
+        ctx.fillStyle = c.overlay;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-
         ctx.font = '13px "IBM Plex Mono", monospace';
         ctx.textBaseline = 'top';
-
         for (var i = 0; i < cols; i++) {
           var row = drops[i];
-
           if (row >= 0 && row < numRows) {
-            // Head: near-black, crisp
-            ctx.fillStyle = 'rgba(34,34,38,0.92)';
+            ctx.fillStyle = c.head;
             ctx.fillText(Math.random() > 0.5 ? '1' : '0', i * CW, row * CH);
-
-            // One row above head: slightly lighter for glow effect
             if (row > 0) {
-              ctx.fillStyle = 'rgba(34,34,38,0.55)';
+              ctx.fillStyle = c.sub;
               ctx.fillText(Math.random() > 0.5 ? '1' : '0', i * CW, (row - 1) * CH);
             }
           }
-
           drops[i]++;
-
-          // Reset drop: once off-screen, pause then restart from top
           if (drops[i] > numRows + 5 && Math.random() > 0.975) {
             drops[i] = -Math.floor(Math.random() * numRows * 0.6);
           }
         }
-
         requestAnimationFrame(draw);
       }
+
+      // Theme toggle
+      var btn = document.getElementById('theme-toggle');
+      var label = document.getElementById('theme-label');
+      function applyTheme(t) {
+        document.documentElement.setAttribute('data-theme', t);
+        localStorage.setItem('theme', t);
+        label.textContent = t === 'dark' ? 'Light' : 'Dark';
+        // Refill canvas with new bg to avoid trail bleed
+        ctx.fillStyle = getRainColors().bg;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      }
+      // Set initial label
+      label.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? 'Light' : 'Dark';
+      btn.addEventListener('click', function () {
+        var current = document.documentElement.getAttribute('data-theme');
+        applyTheme(current === 'dark' ? 'light' : 'dark');
+      });
 
       window.addEventListener('resize', init);
       init();
