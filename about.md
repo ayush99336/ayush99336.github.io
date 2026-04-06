@@ -19,12 +19,7 @@ permalink: /about/
 	</ul>
 </section>
 
-<section class="panel stagger stagger-3">
-	<h2>Contact</h2>
-	<p><a href="mailto:ayushkaushikhere@gmail.com">ayushkaushikhere@gmail.com</a></p>
-	<p><a href="https://github.com/ayush99336" target="_blank" rel="noopener noreferrer">github.com/ayush99336</a></p>
-	<p><a href="https://linkedin.com/in/ayushkaushik-ism" target="_blank" rel="noopener noreferrer">linkedin.com/in/ayushkaushik-ism</a></p>
-</section>
+
 
 <section class="panel stagger stagger-4">
 	<h2>Stack</h2>
