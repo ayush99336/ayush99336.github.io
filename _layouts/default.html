@@ -66,52 +66,64 @@
     (function () {
       var canvas = document.getElementById('binary-bg');
       var ctx = canvas.getContext('2d');
-      var CW = 16, CH = 20;
-      var cols, rows, cells;
-
-      function randCell() {
-        var hot = Math.random() < 0.2;
-        return {
-          c: Math.random() > 0.5 ? '1' : '0',
-          op: hot ? Math.random() * 0.18 + 0.18 : Math.random() * 0.14 + 0.06,
-          ttl: hot ? Math.floor(Math.random() * 14) + 6 : Math.floor(Math.random() * 60) + 30,
-          hot: hot
-        };
-      }
+      var CW = 14, CH = 18;
+      var cols, numRows, drops;
+      var BG = '#efefed'; // matches --bg
 
       function init() {
-        canvas.width = window.innerWidth;
+        canvas.width  = window.innerWidth;
         canvas.height = window.innerHeight;
-        cols = Math.ceil(canvas.width / CW);
-        rows = Math.ceil(canvas.height / CH);
-        cells = new Array(cols * rows);
-        for (var i = 0; i < cells.length; i++) {
-          cells[i] = randCell();
-          cells[i].ttl = Math.floor(Math.random() * cells[i].ttl);
+        cols    = Math.ceil(canvas.width  / CW);
+        numRows = Math.ceil(canvas.height / CH);
+
+        // Solid bg fill so the fade-overlay technique works from frame 1
+        ctx.fillStyle = BG;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        drops = new Array(cols);
+        for (var i = 0; i < cols; i++) {
+          // ~65 % of columns start active, rest start above screen
+          drops[i] = Math.random() < 0.65
+            ? -Math.floor(Math.random() * numRows)
+            : -(numRows + Math.floor(Math.random() * numRows));
         }
       }
 
       function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // Paint a semi-transparent light overlay — fades old chars back to bg
+        ctx.fillStyle = 'rgba(239,239,237,0.055)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
         ctx.font = '13px "IBM Plex Mono", monospace';
         ctx.textBaseline = 'top';
-        for (var r = 0; r < rows; r++) {
-          for (var c = 0; c < cols; c++) {
-            var cell = cells[r * cols + c];
-            if (--cell.ttl <= 0) {
-              var wasHot = cell.hot;
-              cells[r * cols + c] = randCell();
-              cell = cells[r * cols + c];
-              if (!wasHot && Math.random() < 0.05) cell.hot = true;
+
+        for (var i = 0; i < cols; i++) {
+          var row = drops[i];
+
+          if (row >= 0 && row < numRows) {
+            // Head: near-black, crisp
+            ctx.fillStyle = 'rgba(34,34,38,0.92)';
+            ctx.fillText(Math.random() > 0.5 ? '1' : '0', i * CW, row * CH);
+
+            // One row above head: slightly lighter for glow effect
+            if (row > 0) {
+              ctx.fillStyle = 'rgba(34,34,38,0.55)';
+              ctx.fillText(Math.random() > 0.5 ? '1' : '0', i * CW, (row - 1) * CH);
             }
-            ctx.fillStyle = 'rgba(34,34,38,' + cell.op + ')';
-            ctx.fillText(cell.c, c * CW, r * CH);
+          }
+
+          drops[i]++;
+
+          // Reset drop: once off-screen, pause then restart from top
+          if (drops[i] > numRows + 5 && Math.random() > 0.975) {
+            drops[i] = -Math.floor(Math.random() * numRows * 0.6);
           }
         }
+
         requestAnimationFrame(draw);
       }
 
-      window.addEventListener('resize', function () { init(); });
+      window.addEventListener('resize', init);
       init();
       draw();
     })();
