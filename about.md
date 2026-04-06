@@ -6,7 +6,7 @@ permalink: /about/
 
 <section class="panel stagger stagger-1">
 	<h1>About</h1>
-	<p>Ayush Kaushik. Software engineer working across backend, realtime, and product systems.</p>
+	<p>Ayush Kaushik. Civil Engineer by day and software engineer by night.</p>
 	<p>This site is an archive of project notes, build logs, and journal entries.</p>
 </section>
 
