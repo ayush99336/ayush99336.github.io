@@ -128,8 +128,8 @@ a {
 }
 
 .profile-avatar {
-  width: 3rem;
-  height: 3rem;
+  width: 2.4rem;
+  height: 2.4rem;
   border-radius: 50%;
   object-fit: cover;
   object-position: center 30%;
@@ -138,8 +138,8 @@ a {
 
 @media (min-width: 800px) {
   .profile-avatar {
-    width: 5.6rem;
-    height: 5.6rem;
+    width: 4.5rem;
+    height: 4.5rem;
   }
 }
 
@@ -200,8 +200,8 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: 2rem;
   color: var(--muted);
   text-decoration: none;
   opacity: 0.82;
@@ -209,8 +209,8 @@ a {
 }
 
 .social-icon-link svg {
-  width: 1rem;
-  height: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
   fill: currentColor;
 }
 
@@ -218,6 +218,34 @@ a {
   opacity: 1;
   color: var(--accent);
   transform: translateY(-1px);
+}
+
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  padding: 0.35rem 0.85rem;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  opacity: 0.8;
+  transition: color 0.18s ease, opacity 0.18s ease, border-color 0.18s ease;
+}
+
+.home-btn svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.home-btn:hover {
+  opacity: 1;
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 .page-content {
@@ -390,36 +418,7 @@ li {
   line-height: 1.35;
 }
 
-.social-icon-row {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  margin-top: 0;
-}
 
-.social-icon-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.3rem;
-  height: 1.3rem;
-  color: var(--muted);
-  text-decoration: none;
-  opacity: 0.82;
-  transition: color 0.18s ease, opacity 0.18s ease, transform 0.18s ease;
-}
-
-.social-icon-link svg {
-  width: 0.78rem;
-  height: 0.78rem;
-  fill: currentColor;
-}
-
-.social-icon-link:hover {
-  opacity: 1;
-  color: var(--accent);
-  transform: translateY(-0.5px);
-}
 
 .stagger {
   animation: riseIn 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
