@@ -69,6 +69,16 @@
       var CW = 16, CH = 20;
       var cols, rows, cells;
 
+      function randCell() {
+        var hot = Math.random() < 0.2;
+        return {
+          c: Math.random() > 0.5 ? '1' : '0',
+          op: hot ? Math.random() * 0.18 + 0.18 : Math.random() * 0.14 + 0.06,
+          ttl: hot ? Math.floor(Math.random() * 14) + 6 : Math.floor(Math.random() * 60) + 30,
+          hot: hot
+        };
+      }
+
       function init() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -76,11 +86,8 @@
         rows = Math.ceil(canvas.height / CH);
         cells = new Array(cols * rows);
         for (var i = 0; i < cells.length; i++) {
-          cells[i] = {
-            c: Math.random() > 0.5 ? '1' : '0',
-            op: Math.random() * 0.12 + 0.04,
-            ttl: Math.floor(Math.random() * 400) + 60
-          };
+          cells[i] = randCell();
+          cells[i].ttl = Math.floor(Math.random() * cells[i].ttl);
         }
       }
 
@@ -92,9 +99,10 @@
           for (var c = 0; c < cols; c++) {
             var cell = cells[r * cols + c];
             if (--cell.ttl <= 0) {
-              cell.c = Math.random() > 0.5 ? '1' : '0';
-              cell.op = Math.random() * 0.12 + 0.04;
-              cell.ttl = Math.floor(Math.random() * 500) + 80;
+              var wasHot = cell.hot;
+              cells[r * cols + c] = randCell();
+              cell = cells[r * cols + c];
+              if (!wasHot && Math.random() < 0.05) cell.hot = true;
             }
             ctx.fillStyle = 'rgba(34,34,38,' + cell.op + ')';
             ctx.fillText(cell.c, c * CW, r * CH);
